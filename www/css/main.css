@@ -1,0 +1,57 @@
+/*
+ * Flip styles stolen from: https://davidwalsh.name/css-flip
+ */
+
+.flip-container {
+    margin: auto;
+    perspective: 1000px;
+}
+
+.flip-container.flip .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    height: 400px;
+    width: 320px;
+}
+
+/* flip speed goes here */
+.flipper {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.6s;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    align-items: center;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    background: beige;
+    transform: rotateY(0deg); /* for firefox 31 */
+    z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+    background: beige;
+    transform: rotateY(180deg);
+}
+
+#controls {
+    display: flex;
+    margin: auto;
+    padding: 1.0rem;
+    justify-content: center;
+    width: 320px;
+}
+
