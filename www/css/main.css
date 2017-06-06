@@ -12,8 +12,8 @@
 }
 
 .flip-container, .front, .back {
-    height: 400px;
-    width: 320px;
+    height: 300px;
+    width: 400px;
 }
 
 /* flip speed goes here */
@@ -27,7 +27,9 @@
 .front, .back {
     align-items: center;
     backface-visibility: hidden;
+    background: steelblue;
     display: flex;
+    font-size: 1.5rem;
     justify-content: center;
     left: 0;
     position: absolute;
@@ -36,14 +38,14 @@
 
 /* front pane, placed above back */
 .front {
-    background: beige;
+    border-radius: 20px;
     transform: rotateY(0deg); /* for firefox 31 */
     z-index: 2;
 }
 
 /* back, initially hidden pane */
 .back {
-    background: beige;
+    border-radius: 20px;
     transform: rotateY(180deg);
 }
 
@@ -52,6 +54,6 @@
     margin: auto;
     padding: 1.0rem;
     justify-content: center;
-    width: 320px;
+    width: 400px;
 }
 
